@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "pCA8JAtHr90IBA61setcRBoBdZZFutiri9QfZCqFuPgJn3W1m0aIX8n2sTNHRzPO8s7dSjqnwsWi9zj9wIModA==",
+  "success": true,
+  "projectFilePath": "K:\\Code\\C#\\Recipe-Exercise\\Recipe-Exercise\\Recipe-Exercise.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Cygnus\\.nuget\\packages\\spectre.console\\0.44.0\\spectre.console.0.44.0.nupkg.sha512"
+  ],
+  "logs": []
+}
