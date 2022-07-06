@@ -7,7 +7,7 @@ namespace Exercise_1
     {
         public static void Main()
         {
-            Manipulator manipulator = new Manipulator();
+            var manipulator = new Manipulator();
             while (true)
             {
                 AnsiConsole.Clear();
@@ -32,18 +32,17 @@ namespace Exercise_1
                         Environment.Exit(0);
                         break;
                     case "Recipes":
-                        recipeTable(manipulator);
-
+                        RecipeTable(manipulator);
 
                         break;
                     case "Categories":
-                        categoryTable(manipulator);
+                        CategoryTable(manipulator);
                         break;
                 }
             }
         }
 
-        public static void recipeTable(Manipulator manipulator)
+        public static void RecipeTable(Manipulator manipulator)
         {
             AnsiConsole.Clear();
             List<Recipe> recipes = manipulator.Recipes;
@@ -91,8 +90,8 @@ namespace Exercise_1
                 case "List Recipes":
                     var recipeTable = new Table()
                         .AddColumn("[red]Please select a recipe to display[/]");
-                    List<string> titles = new List<string>();
-                    StringBuilder titleBuilder = new StringBuilder();
+                    var titles = new List<string>();
+                    var titleBuilder = new StringBuilder();
                     var recipeMap = new Dictionary<string, Guid>();
 
                     AnsiConsole.Clear();
@@ -128,7 +127,6 @@ namespace Exercise_1
                     var listingTable = new Table();
                     listingTable.AddColumn("[green]Ingredients[/]")
                         .AddColumn("[green]Instructions[/]");
-
                     var index = recipeToList.Ingredients.Count < recipeToList.Instructions.Count ? recipeToList.Instructions.Count : recipeToList.Ingredients.Count;
 
                     for (int i = 0; i < index; ++i)
@@ -173,7 +171,7 @@ namespace Exercise_1
 
                     if (manipulator.Recipes.Find(x => x.Title == recipeAddTitle && x.Categories.All(recipeAddCategories.Contains)) == null)
                     {
-                        Recipe recipeToAdd = new Recipe(recipeAddTitle, recipeInstructions, recipeIngredients, recipeAddCategories);
+                        var recipeToAdd = new Recipe(recipeAddTitle, recipeInstructions, recipeIngredients, recipeAddCategories);
                         manipulator.AddRecipe(recipeToAdd);
                         manipulator.RecipeSeralize();
                     }
@@ -192,7 +190,7 @@ namespace Exercise_1
                 case "Edit a Recipe":
                     AnsiConsole.Clear();
 
-                    List<string> toEditTitles = new List<string>();
+                    var toEditTitles = new List<string>();
 
 
                     foreach (Recipe recipe in recipes)
@@ -313,7 +311,7 @@ namespace Exercise_1
 
             }
         }
-        public static void categoryTable(Manipulator manipulator)
+        public static void CategoryTable(Manipulator manipulator)
         {
             AnsiConsole.Clear();
             var categoryPrompt = AnsiConsole.Prompt(
@@ -386,7 +384,7 @@ namespace Exercise_1
                             new TextPrompt<string>("[red]Press Enter to go back...[/]")
                             .AllowEmpty());
 
-                        categoryTable(manipulator);
+                        CategoryTable(manipulator);
                     }
                     else
                     {
@@ -396,7 +394,7 @@ namespace Exercise_1
                             new TextPrompt<string>("[yellow]Added succesfully. Press Enter to go back...[/]")
                             .AllowEmpty());
 
-                        categoryTable(manipulator);
+                        CategoryTable(manipulator);
                     }
                     break;
                 case "Return":
