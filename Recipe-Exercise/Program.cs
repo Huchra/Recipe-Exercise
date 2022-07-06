@@ -138,7 +138,7 @@ namespace Exercise_1
                     }
 
                     AnsiConsole.Write(listingTable.Centered().Expand());
-                    _ = AnsiConsole.Prompt(
+                    AnsiConsole.Prompt(
                         new TextPrompt<string>($"[blue]Recipe: {recipeTitle}.\n[/] [yellow]Press Enter when you're done viewing to go back[/]")
                         .AllowEmpty());
                     break;
@@ -182,7 +182,7 @@ namespace Exercise_1
                             .AddColumn("[red]The recipe already exists[/]")
                             .Centered().Expand();
                         AnsiConsole.Write(recipeAddError);
-                        _ = AnsiConsole.Prompt(
+                        AnsiConsole.Prompt(
                             new TextPrompt<string>("[red]Press Enter to go back...[/]")
                             .AllowEmpty());
                     }
@@ -333,12 +333,8 @@ namespace Exercise_1
                             .AddColumn("[red]Please enter a category first[/]").Centered();
                         AnsiConsole.Write(editCategoryError);
 
-                        _ = AnsiConsole.Prompt(
-                            new TextPrompt<string>("[yellow]Edited! Press Enter to go back...[/]")
-                            .AllowEmpty());
                         return;
                     }
-
 
                     var categoryToEdit = AnsiConsole.Prompt(
                         new SelectionPrompt<string>()
@@ -362,7 +358,7 @@ namespace Exercise_1
                     manipulator.RecipeSeralize();
                     manipulator.CategorySerialize();
 
-                    _ = AnsiConsole.Prompt(
+                    AnsiConsole.Prompt(
                         new TextPrompt<string>("[green]Edited! Press Enter to go back...[/]")
                         .AllowEmpty());
 
@@ -380,7 +376,7 @@ namespace Exercise_1
                             .AddColumn("[underline][red]Category already exists.[/][/]")
                             .Centered().Expand();
                         AnsiConsole.Write(errAddTable);
-                        _ = AnsiConsole.Prompt(
+                        AnsiConsole.Prompt(
                             new TextPrompt<string>("[red]Press Enter to go back...[/]")
                             .AllowEmpty());
 
@@ -390,7 +386,7 @@ namespace Exercise_1
                     {
                         manipulator.Categories.AddCategory(categoryToAdd);
                         manipulator.CategorySerialize();
-                        _ = AnsiConsole.Prompt(
+                        AnsiConsole.Prompt(
                             new TextPrompt<string>("[yellow]Added succesfully. Press Enter to go back...[/]")
                             .AllowEmpty());
 
