@@ -166,7 +166,7 @@ namespace Exercise_1
                         .Title("Please pick categories")
                         .Required()
                         .PageSize(10)
-                        .InstructionsText("[yellow]pick the relevant categories[/]")
+                        .InstructionsText("[yellow]Pick the relevant categories[/]")
                         .AddChoices(categories));
 
                     if (manipulator.Recipes.Find(x => x.Title == recipeAddTitle && x.Categories.All(recipeAddCategories.Contains)) == null)
@@ -224,7 +224,7 @@ namespace Exercise_1
                         .Title("Please pick categories the recipe belongs to")
                         .Required()
                         .PageSize(10)
-                        .InstructionsText("[yellow]pick the relevant categories[/]")
+                        .InstructionsText("[yellow]Pick the relevant categories[/]")
                         .AddChoices(categoryList)
                         );
 
@@ -281,7 +281,7 @@ namespace Exercise_1
                                             .Title("Please pick categories the recipe belongs to")
                                             .Required()
                                             .PageSize(10)
-                                            .InstructionsText("[yellow]pick the categories you want to remove from the recipe[/]")
+                                            .InstructionsText("[yellow]Pick the categories you want to remove from the recipe[/]")
                                             .AddChoices(result.Categories));
 
                                         result.EditRecipeCategory(categoriesToRemove);
@@ -297,7 +297,7 @@ namespace Exercise_1
                                         .Title("Please pick categories the recipe belongs to")
                                         .Required()
                                         .PageSize(10)
-                                        .InstructionsText("[yellow]pick the relevant categories[/]")
+                                        .InstructionsText("[yellow]Pick the relevant categories[/]")
                                         .AddChoices(recipeCategories));
 
                                     result.AddRecipeCategory(categoriesToAdd);

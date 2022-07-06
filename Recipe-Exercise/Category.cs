@@ -25,7 +25,6 @@ namespace Exercise_1
             else return false;
         }
 
-        // TODO: Edit recipe references from old category to new category.
         public bool EditCategory(string oldCategoryName, string newCategoryName)
         {
             ArgumentNullException.ThrowIfNull(oldCategoryName);
@@ -38,17 +37,6 @@ namespace Exercise_1
             Categories.Add(newCategoryName, true);
 
             return true;
-        }
-        
-        // TODO: Decide how to manage removed category recipes.
-        public bool RemoveCategory(string categoryName)
-        {
-            ArgumentNullException.ThrowIfNull(categoryName);
-
-            if (!Categories.ContainsKey(categoryName))
-                return false;
-
-            return Categories.Remove(categoryName);
         }
     }
 }

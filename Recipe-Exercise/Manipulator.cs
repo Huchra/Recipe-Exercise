@@ -24,7 +24,7 @@ namespace Exercise_1
 
             if (File.Exists(_categoryPath))
             {
-                using (StreamReader read = new StreamReader(_categoryPath))
+                using (var read = new StreamReader(_categoryPath))
                 {
                     string file = read.ReadToEnd();
                     var jsonFile = JsonSerializer.Deserialize<Category>(file);
@@ -37,7 +37,7 @@ namespace Exercise_1
 
             if (File.Exists(_recipePath))
             {
-                using (StreamReader read = new StreamReader(_recipePath))
+                using (var read = new StreamReader(_recipePath))
                 {
                     string file = read.ReadToEnd();
                     var jsonFile = JsonSerializer.Deserialize<List<Recipe>>(file);
