@@ -6,19 +6,14 @@ namespace Exercise_1
     // This class is for containg recipes and cateogories as well serializing and deserializing them.
     public class Manipulator
     {
-        public List<Recipe> Recipes { get; set; }
-        public Category Categories { get; set; }
+        public List<Recipe> Recipes { get; set; } = new List<Recipe>();
+        public Category Categories { get; set; } = new Category(new Dictionary<string, bool>());
         [JsonIgnore]
         private readonly string _recipePath;
         private readonly string _categoryPath;
 
-
-
         public Manipulator()
         {
-            Recipes = new List<Recipe>();
-            Dictionary<string, bool> catDict = new();
-            Categories = new Category(catDict);
             _recipePath = "Recipe.json";
             _categoryPath = "Category.json";
 
